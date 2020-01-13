@@ -1,21 +1,30 @@
 {
   "name": "rnsvgmap",
-  "version": "0.1.2",
+  "version": "0.1.9",
   "description": "control map svg bnipi",
-  "keywords": ["map", "svg", "rosneft", "bnipi"],
+  "keywords": [
+    "map",
+    "svg",
+    "rosneft",
+    "bnipi"
+  ],
   "license": "MIT",
   "private": false,
-  "files": ["dist"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build:npm": "vue-cli-service build --target lib --name rnsvgmap src/rnsvgmap.vue"
+    "build:npm": "vue-cli-service build --target lib --inline-vue -name rnsvgmap src/rnsvgmap.vue"
   },
   "main": "dist/rnsvgmap.umd.js",
   "unpkg": "dist/rnsvgmap.umd.min.js",
   "dependencies": {
     "core-js": "^3.4.4",
+    "lodash": "^4.17.15",
     "vue": "^2.6.10"
   },
   "devDependencies": {

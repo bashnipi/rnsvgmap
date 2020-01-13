@@ -34,42 +34,38 @@ export default
 
 </script>
 
-<style scoped lang="scss">
+<style>
 
-	$button-size: 20px;
 	.map-controls-component
 	{
-		position:relative;
+		position: relative;
 		padding: 0;
 		margin: 0;
 		user-select: none;
+	}
+	.map-controls-component-button
+	{
+		width: 20px;
+		height: 20px;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		vertical-align: middle;
+		border: 1px solid #EF6B01;
+		background-color: white;
+		/*width: 23px;*/
+		color: #EF6B01;
+	}
 
-		&-button
-		{
-			width: $button-size;
-			height: $button-size;
-			padding: 0;
-			margin: 0;
-			text-align: center;
-			vertical-align: middle;
-			border: 1px solid #EF6B01;
-			background-color: white;
-			/*width: 23px;*/
-			color: #EF6B01;
-		}
-
-		&-scale
-		{
-			position: relative;
-			margin-top:20px;
-
-			button[data-button-scale="reset"]
-			{
-				border-bottom: none;
-				border-top: none;
-			}
-		}
-
+	.map-controls-component-scale
+	{
+		position: relative;
+		margin-top: 20px;
+	}
+	button[data-button-scale="reset"]
+	{
+		border-bottom: none;
+		border-top: none;
 	}
 
 </style>
