@@ -1,6 +1,6 @@
 {
   "name": "rnsvgmap",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "control map svg bnipi",
   "keywords": ["map", "svg", "rosneft", "bnipi"],
   "license": "MIT",

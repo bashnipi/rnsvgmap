@@ -42,7 +42,7 @@
 
 <script>
 import {throttle} from 'lodash';
-import mapScaleControlsComponent from './components/mapMoveControlsComponent';
+import mapScaleControlsComponent from './components/mapScaleControlsComponent';
 import mapMoveControlsComponent from './components/mapMoveControlsComponent';
 
 let correctCoordinateDefault = 20;
