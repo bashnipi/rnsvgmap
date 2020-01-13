@@ -8,6 +8,11 @@ yarn add rnsvgmap
 ```
 
 ### use
+```
+import rnsvgmap from "rnsvgmap/src/rnsvgmap"
+
+```
+
 ## variant 1
 ```
 <rnsvgmap :svg="svg data"><rnsvgmap>

@@ -34,7 +34,7 @@ export default
 
 </script>
 
-<style>
+<style scoped>
 
 	.map-controls-component
 	{
@@ -60,7 +60,7 @@ export default
 	.map-controls-component-scale
 	{
 		position: relative;
-		margin-top: 20px;
+		/*margin-top: 20px;*/
 	}
 	button[data-button-scale="reset"]
 	{

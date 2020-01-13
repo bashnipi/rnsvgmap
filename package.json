@@ -1,6 +1,6 @@
 {
   "name": "rnsvgmap",
-  "version": "0.1.9",
+  "version": "0.1.11",
   "description": "control map svg bnipi",
   "keywords": [
     "map",
@@ -15,8 +15,6 @@
     "src"
   ],
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "build:npm": "vue-cli-service build --target lib --inline-vue -name rnsvgmap src/rnsvgmap.vue"
   },
