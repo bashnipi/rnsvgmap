@@ -35,6 +35,15 @@
 			>
 				<g ref="svgMapProp"></g>
 				<g><slot></slot></g>
+				<template v-if="mouseIsSelected">
+					<polygon
+							:points="selectionPoints"
+							:stroke-width="widthLine*3"
+							:stroke-dasharray="`${widthLine*2} ${widthLine*3}`"
+							stroke="red"
+							fill="none"
+					/>
+				</template>
 			</svg>
 		</div>
 	</div>
@@ -168,6 +177,14 @@ export default
 		moveDim()
 		{
 			return Math.floor((Math.min(this.max.x, this.max.y)/10));
+		},
+		selectionPoints()
+		{
+			return `${this.selection.begin.x},${this.selection.begin.y} ${this.selection.end.x},${this.selection.begin.y} ${this.selection.end.x},${this.selection.end.y} ${this.selection.begin.x},${this.selection.end.y}`
+		},
+		widthLine()
+		{
+			return Math.min(this.max.x, this.max.y)/(200*this.mapScale);
 		}
 	},
 	watch:
