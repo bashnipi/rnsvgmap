@@ -1,29 +1,18 @@
 # rnsvgmap
 
-## Project setup
+Компонента для управденич картами svg
+
+### install
 ```
-yarn install
+yarn add rnsvgmap
 ```
 
-### Compiles and hot-reloads for development
+### use
+## variant 1
 ```
-yarn run serve
+<rnsvgmap :svg="svg data"><rnsvgmap>
 ```
-
-### Compiles and minifies for production
+## variant 2
 ```
-yarn run build
+<rnsvgmap> <[svgtags]></...> <rnsvgmap>
 ```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
