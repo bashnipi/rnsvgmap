@@ -33,7 +33,7 @@
 					:class="{'map-container-svg-move': mouseDowned}"
 					ref="svgMap"
 			>
-				<g ref="svgMapProp"></g>
+				<g ref="svgMapProp" v-html="svgString"></g>
 				<g><slot></slot></g>
 				<template v-if="mouseIsSelected">
 					<polygon
@@ -64,7 +64,15 @@ export default
 {
 	name: 'rnsvgmap',
 	components: {mapScaleControlsComponent, mapMoveControlsComponent},
-	props:['svg','svgWidth','svgHeight','hideMovePanel','hideScalePanel'],
+	props:
+		{
+			svg: String,
+			maxCoords: Object,
+			minCoords: Object,
+			hideMovePanel: Boolean,
+			hideScalePanel: Boolean
+		},
+		// ['svg', 'maxCoords', 'minCoords', 'hideMovePanel','hideScalePanel'],
 	data: function()
 	{
 		return{
@@ -81,7 +89,8 @@ export default
 			mountedRefs: false,
 			refs: undefined,
 			mutation: undefined,
-			svgSize: {x:297,y:210}
+			svgSize: {x:297,y:210},
+			svgString: ''
 		}
 	},
 	created()
@@ -126,11 +135,11 @@ export default
 		 * */
 		max()
 		{
-			return {x: this.svgWidth?this.svgWidth:this.svgSize.x, y: this.svgHeight?this.svgHeight:this.svgSize.y};
+			return {x: (this.maxCoords&&this.maxCoords.x)?this.maxCoords.x:this.svgSize.x, y: (this.maxCoords&&this.maxCoords.y)?this.maxCoords.y:this.svgSize.y};
 		},
 		min()
 		{
-			return {x:0,y:0};
+			return {x: (this.minCoords&&this.minCoords.x)?this.minCoords.x:0, y: (this.minCoords&&this.minCoords.y)?this.minCoords.y:0};
 		},
 		/** утсановка размеров viewbox svg */
 		wb()
@@ -204,12 +213,11 @@ export default
 		{
 			if (val)
 			{
-				let s = this.svg.trim()
+				this.svgString = this.svg.trim()
 					.replace(/<\?xml[\s\S]*?>/, '')
 					.replace(/<!DOCTYPE[\s\S]*?>/, '')
 					.replace(/<svg[\s\S]*?>/, '')
 					.replace(/<\/svg>$/, '');
-				this.$refs.svgMapProp.innerHTML = s;
 			}
 		},
 		calcCenter()

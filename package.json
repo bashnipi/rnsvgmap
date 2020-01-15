@@ -1,12 +1,15 @@
 {
   "name": "rnsvgmap",
-  "version": "0.1.15",
+  "version": "0.1.21",
   "description": "control map svg bnipi",
+  "repository": "https://github.com/bashnipi/rnsvgmap",
+  "bugs": "https://github.com/bashnipi/rnsvgmap/issues",
   "keywords": [
     "map",
     "svg",
     "rosneft",
-    "bnipi"
+    "bnipi",
+    "vue"
   ],
   "license": "MIT",
   "private": false,
